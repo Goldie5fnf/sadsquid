@@ -1,0 +1,41 @@
+{
+	"storyName": "bootleg spongebob",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "standart",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"why",
+			"icon_sponge",
+			[
+				10,
+				0,
+				0
+			]
+		],
+		[
+			"dumped",
+			"icon_sponge",
+			[
+				0,
+				0,
+				40
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"sponge",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Custom Week"
+}
