@@ -701,6 +701,9 @@ class PlayState extends MusicBeatState
 			introSoundsSuffix = '-pixel';
 		}
 
+                vhs = new VhsHandler();
+	        camGame.setFilters([new ShaderFilter(vhs.shader)]);
+
 		add(gfGroup); //Needed for blammed lights
 
 		// Shitty layering but whatev it works LOL
@@ -2180,9 +2183,6 @@ class PlayState extends MusicBeatState
 	var startedCountdown:Bool = false;
 	var canPause:Bool = true;
 	var limoSpeed:Float = 0;
-
-        vhs = new VhsHandler();
-	camGame.setFilters([new ShaderFilter(vhs.shader)]);
 
 	override public function update(elapsed:Float)
 	{
