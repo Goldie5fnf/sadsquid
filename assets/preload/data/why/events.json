@@ -1,0 +1,29 @@
+{
+	"song": {
+		"speed": 1.8,
+		"stage": "home",
+		"player1": "bf",
+		"player2": "sponge",
+		"player3": null,
+		"events": [
+			[
+				9363.63636363636,
+				[
+					[
+						"Change Scroll Speed",
+						"1.8",
+						"2"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf",
+		"bpm": 165,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "why"
+	}
+}
