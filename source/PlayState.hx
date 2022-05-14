@@ -58,6 +58,8 @@ import DialogueBoxPsych;
 #if MODS_ALLOWED
 import sys.FileSystem;
 #end
+import VcrShader;
+import openfl.filters.ShaderFilter;
 
 using StringTools;
 
@@ -269,6 +271,8 @@ class PlayState extends MusicBeatState
 	
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
+
+        var vhs:VhsHandler;
 
 	override public function create()
 	{
@@ -2177,8 +2181,14 @@ class PlayState extends MusicBeatState
 	var canPause:Bool = true;
 	var limoSpeed:Float = 0;
 
+        vhs = new VhsHandler();
+	camGame.setFilters([new ShaderFilter(vhs.shader)]);
+
 	override public function update(elapsed:Float)
 	{
+
+                vhs.update(elapsed);
+
 		/*if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
