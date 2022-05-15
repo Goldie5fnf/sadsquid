@@ -2,7 +2,7 @@
 	"storyName": "Doomsday",
 	"difficulties": "",
 	"hideFreeplay": false,
-	"weekBackground": "standart",
+	"weekBackground": "squid",
 	"weekBefore": "tutorial",
 	"freeplayColor": [
 		146,
@@ -14,19 +14,19 @@
 	"songs": [
 		[
 			"Doomsday",
-			"icon_squid",
+			"squid",
 			[
-				46,
-				173,
-				113
+				71,
+				71,
+				71
 			]
 		]
 	],
 	"weekCharacters": [
-		"squid",
 		"",
-		"bf"
+		"",
+		""
 	],
 	"hiddenUntilUnlocked": false,
-	"weekName": "Doomsday"
+	"weekName": "squid"
 }
