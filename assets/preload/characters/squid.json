@@ -62,12 +62,12 @@
 		110,
 		130
 	],
-	"healthicon": "icon_squid",
+	"healthicon": "squid",
 	"flip_x": false,
 	"healthbar_colors": [
-		175,
-		102,
-		206
+		71,
+		71,
+		71
 	],
 	"camera_position": [
 		-100,
