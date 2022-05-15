@@ -75,6 +75,7 @@ class MainMenuState extends MusicBeatState
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
+                bg.color = FlxColor.BLACK;
 		add(bg);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -219,7 +220,7 @@ class MainMenuState extends MusicBeatState
 				else
 				{
 					selectedSomethin = true;
-					FlxG.sound.play(Paths.sound('clickText'));
+					FlxG.sound.play(Paths.sound('confirmMenu'));
 
 					if(ClientPrefs.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
@@ -240,8 +241,8 @@ class MainMenuState extends MusicBeatState
 							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
 							{      
 								var daChoice:String = optionShit[curSelected];
-                                                                fr.visible = true;
-                                                                fr.animation.play('switch');
+                                                                //fr.visible = true;
+                                                                //fr.animation.play('switch');
 								switch (daChoice)
 								{
 									case 'story_mode':
