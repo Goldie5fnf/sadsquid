@@ -35,10 +35,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
-		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
-		#if !switch 'donate', #end
 		'options'
 	];
 
@@ -46,6 +43,7 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+        var fr:FlxSprite;
 
 	override function create()
 	{
@@ -91,9 +89,18 @@ class MainMenuState extends MusicBeatState
 		magenta.screenCenter();
 		magenta.visible = false;
 		magenta.antialiasing = ClientPrefs.globalAntialiasing;
-		magenta.color = 0xFFfd719b;
+		magenta.color = FlxColor.BLACK;
 		add(magenta);
-		
+
+                fr = new FlxSprite(0, 0);
+		fr.frames = Paths.getSparrowAtlas('fr');
+		fr.antialiasing = true;
+		fr.animation.addByPrefix('switch', 'fr idle', 24);
+		fr.updateHitbox();
+		fr.screenCenter();
+                fr.visible = false;
+		// logoBl.color = FlxColor.BLACK;
+
 		// magenta.scrollFactor.set();
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -135,6 +142,7 @@ class MainMenuState extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
+                add(fr);
 
 		// NG.core.calls.event.logEvent('swag').send();
 
@@ -211,7 +219,7 @@ class MainMenuState extends MusicBeatState
 				else
 				{
 					selectedSomethin = true;
-					FlxG.sound.play(Paths.sound('confirmMenu'));
+					FlxG.sound.play(Paths.sound('clickText'));
 
 					if(ClientPrefs.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
@@ -230,9 +238,10 @@ class MainMenuState extends MusicBeatState
 						else
 						{
 							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
-							{
+							{      
 								var daChoice:String = optionShit[curSelected];
-
+                                                                fr.visible = true;
+                                                                fr.animation.play('switch');
 								switch (daChoice)
 								{
 									case 'story_mode':
